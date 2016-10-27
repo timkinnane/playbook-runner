@@ -1,0 +1,7 @@
+{
+  "verbose": true,
+  "ignoreRoot": [".git"],
+  "watch": ["./**/*.coffee", "external-scripts.json"],
+  "exec": "coffee --nodejs --debug node_modules/hubot/bin/hubot --name 'runner' -a rocketchat",
+  "ext": "js json coffee"
+}

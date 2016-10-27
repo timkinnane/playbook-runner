@@ -1,0 +1,4 @@
+trigger: /\bcoffee\b$/ig
+message: |
+  :smiley_cat: COFFEE! :coffee:
+  Someone's doing a coffee run. Let me know your [order@runner] if you want in.

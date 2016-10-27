@@ -1,0 +1,57 @@
+private: true
+trigger: /\border\b$/i
+abortKeyword: /\bcancel\b$/i
+onAbortMessage: Ok, no coffee for you.
+onCompleteMessage: Got it. Adding your order to the list in #coffee channel.
+onTimeoutMessage: Timed out! Say [order] to start again.
+skipKeyword: /\bno thanks\b$/i
+skipMessage: or [no thanks].
+conversation:
+  -
+    question: |
+      Great! What would you like?
+      [Latte], [Flat White], [Long Black], [Espresso] or [Hot Chocolate]
+      Say [cancel] if you change your mind.
+    answer:
+      key: type
+      type: choice
+      options:
+        -
+          match: /\blatte\b$/i
+          valid: true
+        -
+          match: /\bflat white\b$/i
+          valid: true
+        -
+          match: /\blong black\b$/i
+          valid: true
+        -
+          match: /\bespresso\b$/i
+          valid: true
+        -
+          match: /\bhot chocolate\b$/i
+          valid: true
+    required: true
+    error: You gotta tell me what you want.
+  -
+    question: Any extras? [soy milk], [skim milk], [extra shot], etc
+    answer:
+      key: extras
+      type: text
+    required: false
+  -
+    question: OK, any sugar? [1], [2], [3]
+    answer:
+      key: sugars
+      type: choice
+      options:
+        -
+          match: /\b([1-3])\b/
+          valid: true
+    required: false
+    error: Sorry, gotta follow health policy. It's [1], [2] or [3]
+report:
+    type: "{{ type }} for @{{ userName }}"
+    extras: "with {{ extras }}"
+    sugars: "and {{ sugars }} sugar"
+reportRoom: coffee

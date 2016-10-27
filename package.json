@@ -1,0 +1,30 @@
+{
+  "name": "runner",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Tim Kinnane <tim@nestedcode.com>",
+  "description": "A demo Hubot using Playbook",
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "handlebars-intl": "^1.1.2",
+		"async-series": "0.0.1",
+    "underscore": "^1.8.3",
+    "yamljs": "^0.2.8",
+    "hubot": "^2.19.0",
+		"hubot-conversation": "^1.1.1",
+    "hubot-dynamic-conversation": "git://github.com/4thParty/hubot-dynamic-conversation.git",
+    "hubot-heroku-keepalive": "^1.0.2",
+    "hubot-rocketchat": "^1.0.3",
+    "hubot-rocketchat-default-response": "0.0.1",
+    "hubot-rocketchat-welcome": "0.0.1"
+  },
+  "engines": {
+    "node": "^4.4.x"
+  },
+  "scripts": {
+    "run": "bin/hubot -a rocketchat",
+    "watch": "nodemon",
+    "debug": "opener http://127.0.0.1:3004/?port=5858 & node-inspector --no-preload --web-port 3004 --web-host=localhost",
+    "kill": "kill -9 `ps ax | grep hubot | awk '{print $1}'`"
+  }
+}
