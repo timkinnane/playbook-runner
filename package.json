@@ -5,6 +5,7 @@
   "author": "Tim Kinnane <tim@nestedcode.com>",
   "description": "A demo Hubot using Playbook",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "handlebars": "^4.0.5",
     "handlebars-intl": "^1.1.2",
 		"async-series": "0.0.1",
